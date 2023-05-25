@@ -1,0 +1,13 @@
+entries:
+  default:
+    protocol: protobuf
+    filename: volo_gen.rs
+    idls:
+    - source: local
+      path: ../idl/cap_placement.proto
+      includes:
+      - ../idl
+    - source: local
+      path: ../idl/health.proto
+      includes:
+      - ../idl

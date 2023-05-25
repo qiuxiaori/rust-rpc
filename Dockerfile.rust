@@ -1,0 +1,9 @@
+FROM rust:1.67.0
+
+RUN rustup install nightly-2022-11-22
+
+RUN rustup default nightly-2022-11-22
+
+CMD ["echo", "Success!"]
+
+

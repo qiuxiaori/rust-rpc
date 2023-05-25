@@ -1,0 +1,59 @@
+[package]
+name = "eas_rpc_server"
+version = "0.1.0"
+edition.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+volo-gen = { path = "./volo-gen" }
+cap-placement = { path = "./cap-placement" }
+
+volo.workspace = true
+volo-grpc.workspace = true
+pilota.workspace = true
+
+anyhow.workspace = true
+async-trait.workspace = true
+tokio = { workspace = true, features = ["full"] }
+regex = "1.7.1"
+csv = "1.2.1"
+indexmap = "1.9.2"
+tracing-subscriber = "0.3"
+
+lazy_static = "1"
+tracing = "0.1"
+prost = "0.11"
+dotenv = "0.15.0"
+env_logger = "0.10.0"
+log = "0.4.17"
+
+[profile.release]
+opt-level = 3
+debug = true
+debug-assertions = false
+overflow-checks = false
+lto = true
+panic = 'unwind'
+incremental = false
+codegen-units = 1
+rpath = false
+
+[workspace]
+members = ["volo-gen", "cap-placement"]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+
+[workspace.dependencies]
+# we recommend to use the latest framework version for new features and bug fixes
+volo = "*"
+volo-build = "*"
+volo-grpc = "*"
+pilota = "*"
+
+anyhow = "1"
+async-trait = "0.1"
+futures = "0.3"
+tokio = "1"

@@ -1,0 +1,18 @@
+FROM docker.eas.jc.in/rust-nightly:1.67.0
+
+WORKDIR /eas-rpc-server
+
+COPY . .
+
+# RUN mkdir -p  .cargo
+
+# COPY config.toml  .cargo/
+
+RUN rustup component add rustfmt --toolchain nightly-2022-11-22
+
+RUN cargo build
+
+EXPOSE 5000
+
+CMD ["cargo", "run", "--bin", "server"]
+

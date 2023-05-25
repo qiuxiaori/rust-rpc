@@ -1,0 +1,20 @@
+[source.crates-io]
+registry = "https://github.com/rust-lang/crates.io-index"
+
+# 替换成你偏好的镜像
+# replace-with = 'ustc'
+
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+#registry = "https://mirrors.ustc.edu.cn/crates.io-index"
+
+[source.tuna]
+registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
+
+[source.sjtu]
+registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index"
+
+
+[http]
+check-revoke = false
+# proxy = "http://192.168.5.87:8888"

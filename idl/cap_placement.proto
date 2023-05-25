@@ -1,0 +1,58 @@
+syntax = "proto3";
+package cap_placement;
+
+message Via {
+    int32 id = 1;
+    string net = 2;
+    string group = 3;
+    float circle_drill = 4;
+    float x = 5;
+    float y = 6;
+}
+
+message Net {
+    string name = 1;
+    string pair_name = 2;
+    repeated string refdes_list = 3;
+}
+
+message Pin {
+    int32 number = 1;
+    string net = 2;
+}
+
+message Cap {
+    string refdes = 1;
+    string symbol_name = 2;
+    map<string,Pin> pins = 3;
+}
+
+message Placement {
+    string refdes = 1;
+    string symbol_name = 2;
+    float x_axis = 3;
+    float y_axis = 4;
+    string rotation = 5;
+    string mirror = 6;
+}
+
+message PlaceRequest {
+    repeated Via vias = 1;
+    repeated Net nets = 2;
+    repeated Cap caps = 3;
+}
+
+message PlaceResponse {
+    repeated Placement placements = 1;
+}
+
+message GetVersionRequest {
+}
+
+message GetVersionResponse {
+    string version = 1;
+}
+
+service PlaceService {
+    rpc GetPlacements(PlaceRequest) returns (PlaceResponse);
+}

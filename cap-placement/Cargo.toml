@@ -1,0 +1,13 @@
+[package]
+name = "cap-placement"
+version = "0.3.2"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cargo_metadata = "0.15.4"
+
+indexmap = "1.9.2"
+
+
