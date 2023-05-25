@@ -1,5 +1,5 @@
 [package]
-name = "eas_rpc_server"
+name = "rust-rpc"
 version = "0.1.0"
 edition.workspace = true
 
